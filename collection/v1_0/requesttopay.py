@@ -4,11 +4,11 @@ reference_id = str(uuid.uuid4())
 headers = {
     # Request headersi
     'Authorization': 'Bearer '+token,
-    'X-Callback-Url': <replace with own http://myapp.com/momoapi/callback>,
+    #'X-Callback-Url': <replace with own http://myapp.com/momoapi/callback>,
     'X-Reference-Id': refrence_id,
     'X-Target-Environment': 'sandbox',
     'Content-Type': 'application/json',
-    'Ocp-Apim-Subscription-Key': '<put-your-primary-subscription-id-here>',
+    'Ocp-Apim-Subscription-Key': 'f262afa7a68a4acfac4f60a93cf0b017>',
 }
 params = urllib.urlencode({})
 body = json.dumps({
