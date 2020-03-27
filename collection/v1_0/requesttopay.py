@@ -23,7 +23,7 @@ body = json.dumps({
   "payeeNote": "test note"
 })
 try:
-    conn = httplib.HTTPSConnection('ericssonbasicapi2.azure-api.net')
+    conn = httplib.HTTPSConnection('andbox.momodeveloper.mtn.com')
     conn.request("POST", "/collection/v1_0/requesttopay?%s" % params, body, headers)
     response = conn.getresponse()
     print(response.status)
