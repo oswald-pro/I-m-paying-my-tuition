@@ -7,7 +7,7 @@ headers = {
 params = urllib.urlencode({
 })
 body = json.dumps({
-  "providerCallbackHost": <your application domain> })
+  "providerCallbackHost": "https://github.com/oswald-pro/I-m-paying-my-tuition/blob/master/v1_0/apiuser/62d73086-8f0e-4117-af0b-413fb0c9f975/apikey/apikey.py" })
 try:
     conn = httplib.HTTPSConnection('ericssonbasicapi2.azure-api.net')
     conn.request("POST", "/v1_0/apiuser/62d73086-8f0e-4117-af0b-413fb0c9f975/apikey?%s" % params, body, headers)

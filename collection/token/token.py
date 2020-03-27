@@ -1,16 +1,18 @@
-import httplib, urllib, base64, uuid,json
+import httplib, urllib, base64
+api_user = "409"
+api_key = "685d216cc6194b2687a5dffb5e4281b9"
+api_user_and_key  = api_user+':'+api_key
+encoded = base64.b64encode(api_user_and_key)
 headers = {
     # Request headers
-    'X-Reference-Id': '62d73086-8f0e-4117-af0b-413fb0c9f975',
-    'Content-Type': 'application/json',
+    'Authorization': 'Basic '+encoded,
     'Ocp-Apim-Subscription-Key': 'f262afa7a68a4acfac4f60a93cf0b017',
 }
-params = urllib.urlencode({})
-body = json.dumps({
-  "providerCallbackHost": "https://github.com/oswald-pro/I-m-paying-my-tuition/tree/master/v1_0/apiuser" })
+params = urllib.urlencode({
+})
 try:
     conn = httplib.HTTPSConnection('sandbox.momodeveloper.mtn.com')
-    conn.request("POST", "/v1_0/apiuser?%s" % params, body, headers)
+    conn.request("POST", "/collection/token/?%s" % params, "{body}", headers)
     response = conn.getresponse()
     print(response.status)
     print(response.reason)
